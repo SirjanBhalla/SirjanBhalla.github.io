@@ -1,37 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sirjan Bhalla | Data Analyst Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <meta charset="UTF_8">
+    <meta name="viewport" content="width=device_width, initial_scale=1.0">
+    <title>Sirjan Bhalla | Data Analyst</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg_color: #f7f7f7;
+            --accent_color: #FFC107; /* Mustard Yellow from your reference */
+            --text_dark: #1a1a1a;
+        }
+
+        body { 
+            margin: 0; 
+            font_family: 'Inter', sans_serif; 
+            background_color: var(--bg_color); 
+            color: var(--text_dark); 
+        }
+
+        /* Minimal Navigation */
+        nav { 
+            display: flex; 
+            justify_content: space_between; 
+            padding: 2rem 5%; 
+            align_items: center; 
+        }
+        .nav_links a { margin_left: 2rem; text_decoration: none; color: var(--text_dark); font_weight: 600; }
+
+        /* Split-Screen Hero Section */
+        .hero { 
+            display: flex; 
+            flex_wrap: wrap; 
+            padding: 5% 5%; 
+            align_items: center; 
+            min_height: 70vh;
+        }
+        .hero_text { flex: 1; min_width: 300px; padding_right: 5%; }
+        .hero_text h1 { font_family: 'Playfair Display', serif; font_size: 4.5rem; margin: 0; }
+        .hero_text p { font_size: 1.2rem; margin: 2rem 0; max_width: 500px; }
+        
+        .hero_image { flex: 1; min_width: 300px; position: relative; }
+        .hero_image img { 
+            width: 100%; 
+            border_radius: 40px; /* Rounded corners from your reference */
+            box_shadow: 20px 20px 60px rgba(0,0,0,0.05);
+        }
+
+        /* Mustard CTA Button */
+        .btn { 
+            background_color: var(--accent_color); 
+            padding: 1rem 2.5rem; 
+            border_radius: 50px; 
+            text_decoration: none; 
+            color: var(--text_dark); 
+            font_weight: 700; 
+            display: inline_block; 
+        }
+
+        /* Black Stats Bar */
+        .stats_bar { 
+            background: #000; 
+            color: #fff; 
+            display: flex; 
+            justify_content: space_around; 
+            padding: 4rem 5%; 
+            text_align: center; 
+        }
+        .stat_item h3 { font_size: 2rem; margin: 0; }
+        .stat_item p { opacity: 0.7; }
+
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Sirjan Bhalla</h1>
-        <p>Data & Business Intelligence Analyst</p>
-        <nav>
-            <a href="#about">About</a> | 
-            <a href="#skills">Skills</a> | 
-            <a href="mailto:sirjanb.can@gmail.com">Contact</a>
-        </nav>
+
+    <nav>
+        <div class="logo"><strong>Sirjan.</strong></div>
+        <div class="nav_links">
+            <a href="#projects">Projects</a>
+            <a href="mailto:your_email@gmail.com" class="btn_small">Contact Me</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero_text">
+            <h1>Hey, I'm Sirjan.</h1>
+            <p>I help organizations transform complex operations data into meaningful business insights.</p>
+            <a href="mailto:your_email@gmail.com" class="btn">Work with Me</a>
+        </div>
+        <div class="hero_image">
+            <img src="https://images.unsplash.com/photo-1551288049-bbbda5366991?auto=format&fit=crop&q=80&w=1000" alt="Data Visualization">
+        </div>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a detail-oriented Data Analyst with experience in operations support and business intelligence infrastructure. I specialize in translating complex datasets into clear, interactive visualizations that drive decision-making.</p>
+    <section class="stats_bar">
+        <div class="stat_item">
+            <h3>3+</h3>
+            <p>Years in Operations</p>
+        </div>
+        <div class="stat_item">
+            <h3>10k+</h3>
+            <p>Calls Simulated</p>
+        </div>
+        <div class="stat_item">
+            <h3>BI</h3>
+            <p>Specialist</p>
+        </div>
     </section>
 
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <ul>
-            <li><strong>Languages:</strong> SQL, Python (Pandas, NumPy)</li>
-            <li><strong>BI Tools:</strong> Tableau, Power BI</li>
-        </ul>
-    </section>
-
-    <footer>
-        <p>© 2026 Sirjan Bhalla | <a href="https://linkedin.com/in/sirjan-bhalla">LinkedIn</a> | <a href="https://github.com/SirjanBhalla">GitHub</a></p>
-    </footer>
 </body>
 </html>
