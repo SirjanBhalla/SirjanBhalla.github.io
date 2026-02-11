@@ -1,154 +1,702 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sirjan Bhalla | Business Intelligence Analyst</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/dp-long-hair.png">
+    <title>Sirjan Bhalla</title>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: 'var(--brand-bg)',
+                            text: 'var(--brand-text)',
+                            header: 'var(--brand-header)',
+                            accent: 'var(--brand-accent)',
+                            card: 'var(--brand-card)',
+                            border: 'var(--brand-border)',
+                            subtext: 'var(--brand-subtext)',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px var(--shadow-color)',
+                        'glow': '0 0 20px var(--glow-color)',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
+        /* CSS Variables for Themes */
         :root {
-            --bg_color: #F4F1EE; /* Warm editorial background */
-            --accent: #FFC107;   /* The yellow button from your ref */
-            --dark: #121212;
+            /* Theme 1: Fintech Forest (Default / Light) */
+            --brand-bg: #F4F7F5;
+            --brand-header: #064E3B;
+            --brand-text: #374151;
+            /* Dark gray for readability */
+            --brand-accent: #10B981;
+            --brand-card: rgba(255, 255, 255, 0.7);
+            --brand-border: rgba(6, 78, 59, 0.1);
+            --brand-subtext: #4B5563;
+            --brand-stat: #064E3B;
+            /* Matches header in light mode */
+
+            --shadow-color: rgba(16, 185, 129, 0.1);
+            --glow-color: rgba(16, 185, 129, 0.2);
+            --ambient-1: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+            --ambient-2: radial-gradient(circle, rgba(6, 78, 59, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
         }
 
-        body { 
-            margin: 0; 
-            font-family: 'Inter', sans-serif; 
-            background: var(--bg_color); 
-            color: var(--dark);
-            overflow-x: hidden;
+        /* Theme: Fintech Forest at Night (Dark) */
+        [data-theme="dark"] {
+            --brand-bg: #0A0F0D;
+            /* Obsidian Green-Black */
+            --brand-header: #F8FAFC;
+            /* Off-White */
+            --brand-text: #CBD5E0;
+            --brand-accent: #10B981;
+            /* Emerald Green */
+            --brand-card: #141B18;
+            /* Dark Card Background */
+            --brand-border: #2D3748;
+            --brand-subtext: #94A3B8;
+            --brand-stat: #34D399;
+            /* Bright Mint for glowing numbers */
+
+            --shadow-color: rgba(16, 185, 129, 0.15);
+            --glow-color: rgba(52, 211, 153, 0.2);
+            --ambient-1: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(10, 15, 13, 0) 70%);
+            --ambient-2: radial-gradient(circle, rgba(52, 211, 153, 0.05) 0%, rgba(10, 15, 13, 0) 70%);
         }
 
-        /* Navigation */
-        nav { 
-            display: flex; 
-            justify-content: space-between; 
-            padding: 2rem 8%; 
-            align-items: center; 
-        }
-        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; }
-        .nav_links a { margin-left: 2rem; text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; }
-
-        /* Hero Section */
-        .hero { 
-            display: grid; 
-            grid-template-columns: 1.2fr 1fr; 
-            padding: 0 8% 5rem 8%; 
-            align-items: center; 
-            min-height: 80vh;
-            gap: 4rem;
-        }
-        
-        .hero_text h1 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: clamp(3rem, 8vw, 5rem); 
-            line-height: 1.1;
-            margin: 0 0 2rem 0; 
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
         }
 
-        .hero_text p { 
-            font-size: 1.25rem; 
-            line-height: 1.6;
-            margin-bottom: 3rem;
-            max-width: 500px;
-            opacity: 0.9;
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
 
-        .cta_btn { 
-            background: var(--accent); 
-            padding: 1.2rem 3rem; 
-            border-radius: 100px; 
-            text-decoration: none; 
-            color: #000; 
-            font-weight: 700;
-            display: inline-block;
-            transition: transform 0.2s;
-        }
-        .cta_btn:hover { transform: scale(1.05); }
-
-        .hero_img_container {
-            position: relative;
-            height: 550px;
-            background: #E0DCD8;
-            border-radius: 40px;
-            overflow: hidden;
+        ::-webkit-scrollbar-track {
+            background: var(--brand-bg);
         }
 
-        .hero_img_container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        ::-webkit-scrollbar-thumb {
+            background: var(--brand-accent);
+            border-radius: 4px;
         }
 
-        /* Stats Bar (The Black Section) */
-        .stats_section {
-            background: var(--dark);
-            color: #fff;
-            padding: 6rem 8%;
-            display: flex;
-            justify-content: space-between;
-            text-align: center;
+        ::-webkit-scrollbar-thumb:hover {
+            opacity: 0.8;
         }
 
-        .stat_card h2 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 3.5rem; 
-            margin: 0; 
-            color: #fff;
-        }
-        
-        .stat_card p { 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-            font-size: 0.8rem; 
-            opacity: 0.6;
-            margin-top: 10px;
+        .modal {
+            transition: opacity 0.3s ease-in-out;
+            opacity: 0;
+            pointer-events: none;
         }
 
-        @media (max-width: 900px) {
-            .hero { grid-template-columns: 1fr; text-align: center; padding-top: 2rem; }
-            .hero_text p { margin: 2rem auto; }
-            .hero_img_container { height: 400px; }
-            .stats_section { flex-direction: column; gap: 3rem; }
+        .modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Ambient Glows */
+        .ambient-glow-1 {
+            background: var(--ambient-1);
+        }
+
+        .ambient-glow-2 {
+            background: var(--ambient-2);
+        }
+
+        /* Glass Card (Modified for solid dark mode cards per request, but keeping class name) */
+        .glass-card {
+            background: var(--brand-card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--brand-border);
+        }
+
+        /* Transitions for theme change */
+        body,
+        nav,
+        .glass-card,
+        button,
+        a,
+        div {
+            transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        /* Toggle Button Icons */
+        .theme-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        [data-theme="light"] .icon-moon {
+            display: block;
+        }
+
+        [data-theme="light"] .icon-sun {
+            display: none;
+        }
+
+        [data-theme="dark"] .icon-moon {
+            display: none;
+        }
+
+        [data-theme="dark"] .icon-sun {
+            display: block;
         }
     </style>
 </head>
-<body>
 
-    <nav>
-        <div class="logo">Sirjan.</div>
-        <div class="nav_links">
-            <a href="#projects">Projects</a>
-            <a href="#contact" style="background: #000; color: #fff; padding: 0.6rem 1.5rem; border-radius: 50px;">Contact Me</a>
-        </div>
-    </nav>
+<body
+    class="bg-brand-bg text-brand-text font-sans antialiased overflow-x-hidden selection:bg-brand-accent selection:text-white leading-relaxed relative">
 
-    <header class="hero">
-        <div class="hero_text">
-            <h1>Hey, I'm Sirjan.</h1>
-            <p>BI Analyst with 4 years of experience scaling revenue and operational efficiency within Fintech and Telecom domains.</p>
-            <a href="mailto:your_email@gmail.com" class="cta_btn">Work with Me</a>
-        </div>
-        <div class="hero_img_container">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" alt="Data Analytics Visual">
-        </div>
-    </header>
+    <!-- Ambient Background Glows (Fixed) -->
+    <div
+        class="fixed top-[-20%] right-[-10%] w-[800px] h-[800px] ambient-glow-1 rounded-full pointer-events-none -z-10 transition-all duration-700">
+    </div>
+    <div
+        class="fixed bottom-[-10%] left-[-10%] w-[600px] h-[600px] ambient-glow-2 rounded-full pointer-events-none -z-10 transition-all duration-700">
+    </div>
 
-    <section class="stats_section">
-        <div class="stat_card">
-            <h2>4+</h2>
-            <p>Years Experience</p>
+    <!-- Floating Navigation -->
+    <div class="fixed top-6 left-0 right-0 flex justify-center z-50 px-4">
+        <nav
+            class="bg-brand-card backdrop-blur-xl border border-brand-border shadow-soft rounded-full px-8 py-3 flex items-center gap-8 md:gap-12 transition-all hover:bg-opacity-90 hover:shadow-glow">
+            <a href="#" class="text-xl font-extrabold tracking-tight text-brand-header">SIRJAN</a>
+            <div class="hidden md:flex gap-8 text-sm font-semibold text-brand-subtext items-center">
+                <a href="#journey" class="hover:text-brand-accent transition-colors">Journey</a>
+                <a href="#impact" class="hover:text-brand-accent transition-colors">Impact</a>
+                <a href="#projects" class="hover:text-brand-accent transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-brand-accent transition-colors">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <!-- Theme Toggle Button -->
+                <button onclick="toggleTheme()"
+                    class="text-brand-header hover:text-brand-accent transition-colors p-2 rounded-full hover:bg-brand-border"
+                    title="Toggle Dark/Light Mode">
+                    <!-- Sun Icon (Variables handle display) -->
+                    <svg class="theme-icon icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <!-- Moon Icon -->
+                    <svg class="theme-icon icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-2xl text-brand-header" onclick="toggleMobileMenu()">☰</button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-brand-bg z-[100] flex flex-col items-center justify-center gap-8 text-2xl font-bold text-brand-header transform translate-x-full transition-transform duration-300 md:hidden">
+        <button class="absolute top-8 right-8 text-4xl text-brand-subtext hover:text-brand-accent"
+            onclick="toggleMobileMenu()">×</button>
+        <a href="#journey" onclick="toggleMobileMenu()" class="hover:text-brand-accent">Journey</a>
+        <a href="#impact" onclick="toggleMobileMenu()" class="hover:text-brand-accent">Impact</a>
+        <a href="#projects" onclick="toggleMobileMenu()" class="hover:text-brand-accent">Projects</a>
+        <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-brand-accent">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section
+        class="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-24 pt-32 pb-20 md:pt-0 gap-12 max-w-7xl mx-auto">
+        <div class="md:w-1/2 space-y-8 animate-fade-in-up md:pr-12">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-brand-header leading-[1.1]">
+                Hi! I'm <span class="text-brand-accent">Sirjan</span>.
+            </h1>
+            <p class="text-lg md:text-xl text-brand-subtext leading-relaxed max-w-lg">
+                BI & Data Analyst with 3+ years of experience scaling revenue and operational efficiency.
+            </p>
+            <div class="pt-2 flex gap-4">
+                <a href="#projects"
+                    class="inline-flex items-center justify-center bg-brand-accent text-brand-bg px-8 py-3.5 rounded-full text-base font-bold shadow-soft hover:shadow-glow hover:-translate-y-0.5 transition-all duration-300"
+                    style="color:white"> <!-- White text for buttons works on both themes -->
+                    View Work
+                </a>
+                <a href="#contact"
+                    class="inline-flex items-center justify-center bg-brand-accent text-brand-bg px-8 py-3.5 rounded-full text-base font-bold shadow-soft hover:shadow-glow hover:-translate-y-0.5 transition-all duration-300"
+                    style="color:white">
+                    Contact Me
+                </a>
+            </div>
         </div>
-        <div class="stat_card">
-            <h2>25%</h2>
-            <p>Revenue Boost</p>
-        </div>
-        <div class="stat_card">
-            <h2>80%</h2>
-            <p>Error Reduction</p>
+        <!-- Avatar Wrapper -->
+        <div class="md:w-1/2 flex justify-center md:justify-end relative">
+            <div class="relative w-72 h-72 md:w-96 md:h-96">
+                <!-- Soft Glow behind avatar -->
+                <div class="absolute inset-0 bg-brand-accent blur-[60px] opacity-30 rounded-full transform scale-100">
+                </div>
+                <div class="relative glass-card rounded-full p-3 shadow-soft w-full h-full">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-white/20">
+
+                        <img src="images/dp-long-hair.png" alt="Sirjan Avatar" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- My Journey -->
+    <section id="journey" class="py-24 px-6 md:px-24 relative z-10 text-center md:text-left">
+        <div class="max-w-4xl mx-auto">
+            <span class="text-brand-accent font-bold tracking-wider uppercase text-sm mb-4 block">About Me</span>
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-12 text-brand-header tracking-tight">My <span
+                    class="text-brand-accent">Journey</span></h2>
+            <div
+                class="glass-card p-8 md:p-12 rounded-3xl shadow-sm space-y-8 text-lg md:text-xl text-brand-text leading-loose">
+                <p>
+                    Data isn't just numbers: it's a story waiting to be told. My career began with a curiosity about how
+                    businesses truly operate.
+                </p>
+                <div class="border-l-4 border-brand-accent pl-6 italic text-brand-subtext">
+                    "From untangling complex datasets to building intuitive dashboards, I've dedicated my professional
+                    life to turning raw data into actionable insights."
+                </div>
+                <p>
+                    I believe in the human element of analysis: understanding the 'why' behind the metrics and
+                    empowering teams to make smarter decisions faster.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Bar -->
+    <section id="impact" class="border-y border-brand-border bg-brand-card py-20 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 md:px-24">
+            <div
+                class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-brand-border">
+                <div class="text-center px-4 py-6 md:py-0">
+                    <div class="text-5xl md:text-6xl font-black mb-2 drop-shadow-sm" style="color: var(--brand-stat)">4+
+                    </div>
+                    <div class="text-xs md:text-sm font-bold uppercase tracking-widest text-brand-subtext">Years
+                        Experience</div>
+                </div>
+                <div class="text-center px-4 py-6 md:py-0">
+                    <div class="text-5xl md:text-6xl font-black mb-2 drop-shadow-sm" style="color: var(--brand-stat)">
+                        25%</div>
+                    <div class="text-xs md:text-sm font-bold uppercase tracking-widest text-brand-subtext">Revenue Boost
+                    </div>
+                </div>
+                <div class="text-center px-4 py-6 md:py-0">
+                    <div class="text-5xl md:text-6xl font-black mb-2 drop-shadow-sm" style="color: var(--brand-stat)">
+                        80%</div>
+                    <div class="text-xs md:text-sm font-bold uppercase tracking-widest text-brand-subtext">KPI Error
+                        Reduction</div>
+                </div>
+                <div class="text-center px-4 py-6 md:py-0">
+                    <div class="text-5xl md:text-6xl font-black mb-2 drop-shadow-sm" style="color: var(--brand-stat)">
+                        90%</div>
+                    <div class="text-xs md:text-sm font-bold uppercase tracking-widest text-brand-subtext">Automation
+                        Imp.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Grid -->
+    <section id="projects" class="py-24 px-6 md:px-24 max-w-7xl mx-auto relative z-10">
+        <span class="text-brand-accent font-bold tracking-wider uppercase text-sm mb-4 block">Portfolio</span>
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-16 text-brand-header tracking-tight">Selected <span
+                class="text-brand-accent">Projects</span></h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            <!-- Card 1 -->
+            <div
+                class="glass-card rounded-3xl p-8 shadow-card hover:shadow-glow hover:border-brand-accent transition-all duration-500 hover:-translate-y-2 group">
+                <div
+                    class="h-64 bg-brand-bg rounded-2xl mb-8 flex items-center justify-center overflow-hidden relative border border-brand-border">
+                    <div class="absolute inset-0 bg-brand-accent opacity-5 group-hover:opacity-10 transition-opacity">
+                    </div>
+                    <span class="text-brand-subtext font-medium z-10">Project Preview 1</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 text-brand-header group-hover:text-brand-accent transition-colors">
+                    Revenue Dashboard</h3>
+                <p class="text-brand-text mb-8 leading-relaxed">Optimizing sales tracking for a large retail client
+                    through intuitive data visualization.</p>
+                <button onclick="openModal('modal1')"
+                    class="text-brand-accent font-bold text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all group-hover:text-brand-header">
+                    View Project <span>→</span>
+                </button>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+                class="glass-card rounded-3xl p-8 shadow-card hover:shadow-glow hover:border-brand-accent transition-all duration-500 hover:-translate-y-2 group">
+                <div
+                    class="h-64 bg-brand-bg rounded-2xl mb-8 flex items-center justify-center overflow-hidden relative border border-brand-border">
+                    <div class="absolute inset-0 bg-brand-accent opacity-5 group-hover:opacity-10 transition-opacity">
+                    </div>
+                    <span class="text-brand-subtext font-medium z-10">Project Preview 2</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 text-brand-header group-hover:text-brand-accent transition-colors">
+                    Churn Predictor</h3>
+                <p class="text-brand-text mb-8 leading-relaxed">Machine learning model to identify at:risk customers
+                    before they leave.</p>
+                <button onclick="openModal('modal2')"
+                    class="text-brand-accent font-bold text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all group-hover:text-brand-header">
+                    View Project <span>→</span>
+                </button>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+                class="glass-card rounded-3xl p-8 shadow-card hover:shadow-glow hover:border-brand-accent transition-all duration-500 hover:-translate-y-2 group">
+                <div
+                    class="h-64 bg-brand-bg rounded-2xl mb-8 flex items-center justify-center overflow-hidden relative border border-brand-border">
+                    <div class="absolute inset-0 bg-brand-accent opacity-5 group-hover:opacity-10 transition-opacity">
+                    </div>
+                    <span class="text-brand-subtext font-medium z-10">Project Preview 3</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 text-brand-header group-hover:text-brand-accent transition-colors">
+                    Supply Chain Ops</h3>
+                <p class="text-brand-text mb-8 leading-relaxed">Real:time visualization of logistics and inventory to
+                    prevent bottlenecks.</p>
+                <button onclick="openModal('modal3')"
+                    class="text-brand-accent font-bold text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all group-hover:text-brand-header">
+                    View Project <span>→</span>
+                </button>
+            </div>
+
+            <!-- Card 4 -->
+            <div
+                class="glass-card rounded-3xl p-8 shadow-card hover:shadow-glow hover:border-brand-accent transition-all duration-500 hover:-translate-y-2 group">
+                <div
+                    class="h-64 bg-brand-bg rounded-2xl mb-8 flex items-center justify-center overflow-hidden relative border border-brand-border">
+                    <div class="absolute inset-0 bg-brand-accent opacity-5 group-hover:opacity-10 transition-opacity">
+                    </div>
+                    <span class="text-brand-subtext font-medium z-10">Project Preview 4</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 text-brand-header group-hover:text-brand-accent transition-colors">
+                    Marketing Attribution</h3>
+                <p class="text-brand-text mb-8 leading-relaxed">Multi:touch attribution model to clear up ambiguity in
+                    ad spend ROI.</p>
+                <button onclick="openModal('modal4')"
+                    class="text-brand-accent font-bold text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all group-hover:text-brand-header">
+                    View Project <span>→</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Competencies -->
+    <section class="py-20 px-6 md:px-24 border-t border-brand-border bg-brand-card relative z-10">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-12 text-brand-subtext tracking-tight">Core Competencies</h2>
+            <div class="flex flex-wrap gap-4 md:gap-8 justify-center items-center">
+                <!-- SQL -->
+                <div
+                    class="glass-card text-brand-text px-6 py-4 rounded-2xl flex items-center gap-3 text-lg font-semibold hover:border-brand-accent hover:text-brand-accent transition-all cursor-default shadow-sm hover:shadow-glow group">
+                    <svg class="w-6 h-6 text-brand-subtext group-hover:text-brand-accent transition-colors"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                    </svg>
+                    SQL
+                </div>
+                <!-- Python -->
+                <div
+                    class="glass-card text-brand-text px-6 py-4 rounded-2xl flex items-center gap-3 text-lg font-semibold hover:border-brand-accent hover:text-brand-accent transition-all cursor-default shadow-sm hover:shadow-glow group">
+                    <img src="https://cdn.brandfetch.io/idbpOFBgcc/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1764244766386"
+                        alt="Python" class="w-6 h-6 group-hover:scale-110 transition-transform">
+                    Python
+                </div>
+                <!-- Tableau -->
+                <div
+                    class="glass-card text-brand-text px-6 py-4 rounded-2xl flex items-center gap-3 text-lg font-semibold hover:border-brand-accent hover:text-brand-accent transition-all cursor-default shadow-sm hover:shadow-glow group">
+                    <img src="https://cdn.brandfetch.io/id9sYMA_Im/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1668082242510"
+                        alt="Tableau" class="w-6 h-6 group-hover:scale-110 transition-transform">
+                    Tableau
+                </div>
+                <!-- Power BI -->
+                <div
+                    class="glass-card text-brand-text px-6 py-4 rounded-2xl flex items-center gap-3 text-lg font-semibold hover:border-brand-accent hover:text-brand-accent transition-all cursor-default shadow-sm hover:shadow-glow group">
+                    <img src="https://cdn.brandfetch.io/idVCtIagXj/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1764925990591"
+                        alt="Power BI" class="w-6 h-6 group-hover:scale-110 transition-transform">
+                    Power BI
+                </div>
+                <!-- Mixpanel -->
+                <div
+                    class="glass-card text-brand-text px-6 py-4 rounded-2xl flex items-center gap-3 text-lg font-semibold hover:border-brand-accent hover:text-brand-accent transition-all cursor-default shadow-sm hover:shadow-glow group">
+                    <img src="https://cdn.simpleicons.org/mixpanel/7856FF" alt="Mixpanel"
+                        class="w-6 h-6 group-hover:scale-110 transition-transform">
+                    Mixpanel
+                </div>
+                <!-- Alteryx -->
+                <div
+                    class="glass-card text-brand-text px-6 py-4 rounded-2xl flex items-center gap-3 text-lg font-semibold hover:border-brand-accent hover:text-brand-accent transition-all cursor-default shadow-sm hover:shadow-glow group">
+                    <img src="https://cdn.brandfetch.io/id9_d11aqZ/w/240/h/240/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1667654409055"
+                        alt="Alteryx" class="w-6 h-6 group-hover:scale-110 transition-transform">
+                    Alteryx
+                </div>
+                <!-- RapidMiner -->
+                <div
+                    class="glass-card text-brand-text px-6 py-4 rounded-2xl flex items-center gap-3 text-lg font-semibold hover:border-brand-accent hover:text-brand-accent transition-all cursor-default shadow-sm hover:shadow-glow group">
+                    <img src="https://cdn.brandfetch.io/idUIoFM0dD/w/320/h/320/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&t=1768215004959"
+                        alt="RapidMiner" class="w-6 h-6 group-hover:scale-110 transition-transform">
+                    RapidMiner
+                </div>
+                <!-- Excel -->
+                <div
+                    class="glass-card text-brand-text px-6 py-4 rounded-2xl flex items-center gap-3 text-lg font-semibold hover:border-brand-accent hover:text-brand-accent transition-all cursor-default shadow-sm hover:shadow-glow group">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Microsoft_Office_Excel_%282019%E2%80%932025%29.svg"
+                        alt="Excel" class="w-6 h-6 group-hover:scale-110 transition-transform">
+                    Excel
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-brand-bg border-t border-brand-border py-24 px-6 md:px-24 text-center relative z-10">
+        <div class="max-w-3xl mx-auto space-y-8">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-brand-header mb-4">Let's <span
+                    class="text-brand-accent">Connect</span></h2>
+            <p class="text-xl text-brand-subtext mb-8">Ready to transform your data into decisions?</p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                <a href="mailto:sirjanb.can@gmail.com"
+                    class="w-full md:w-auto bg-brand-accent text-brand-bg px-10 py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-glow hover:-translate-y-1 transition-all flex items-center justify-center gap-3"
+                    style="color:white">
+                    <img src="https://cdn.brandfetch.io/id5o3EIREg/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1696475443284"
+                        alt="Email" class="w-6 h-6">
+                    Email
+                </a>
+                <a href="https://www.linkedin.com/in/sirjan-bhalla"
+                    class="w-full md:w-auto bg-brand-accent text-brand-bg px-10 py-4 rounded-full text-lg font-bold shadow-soft/lg hover:shadow-glow hover:-translate-y-1 transition-all flex items-center justify-center gap-3"
+                    style="color:white">
+                    <img src="https://cdn.brandfetch.io/idJFz6sAsl/theme/dark/idtEseDv1X.svg?c=1bxid64Mup7aczewSAYMX&t=1740370996685"
+                        alt="LinkedIn" class="w-6 h-6">
+                    LinkedIn
+                </a>
+            </div>
+            <p class="pt-16 text-brand-subtext text-sm font-medium">
+                © 2026 Sirjan Bhalla. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Modal Template (Replicated for each ID) -->
+
+    <!-- Modal 1 -->
+    <div id="modal1" class="modal fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" onclick="closeModal('modal1')"></div>
+        <div class="glass-card rounded-3xl w-full max-w-4xl relative z-10 p-8 md:p-12 shadow-2xl max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300"
+            style="background-color: var(--brand-bg)"> <!-- Force opaque modal bg -->
+            <button onclick="closeModal('modal1')"
+                class="absolute top-6 right-6 text-brand-subtext hover:text-brand-accent text-2xl transition-colors">✕</button>
+            <span class="text-brand-accent font-bold tracking-wider uppercase text-sm mb-2 block">Project Details</span>
+            <h3 class="text-3xl md:text-4xl font-extrabold mb-8 text-brand-header">Revenue Dashboard</h3>
+
+            <div
+                class="w-full aspect-video bg-gray-100 rounded-2xl mb-8 flex items-center justify-center border border-brand-border overflow-hidden shadow-inner">
+                <span class="text-brand-subtext font-medium">Video / Demo Embed Placeholder</span>
+            </div>
+
+            <div class="space-y-6 text-lg text-brand-text leading-relaxed">
+                <div>
+                    <h4 class="text-brand-header font-bold text-xl mb-2">Challenge & Solution</h4>
+                    <p>This project involved creating a comprehensive revenue tracking dashboard for a retail client.
+                        The goal was to visualize daily sales performance across multiple regions.</p>
+                </div>
+                <div class="bg-black/5 p-6 rounded-2xl border border-brand-border shadow-sm">
+                    <p class="mb-2"><span class="font-bold text-brand-header">Technologies:</span> SQL for data
+                        extraction, Power BI for visualization.</p>
+                    <p><span class="font-bold text-brand-header">Outcome:</span> Reduced reporting time by 40%.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div id="modal2" class="modal fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" onclick="closeModal('modal2')"></div>
+        <div class="glass-card rounded-3xl w-full max-w-4xl relative z-10 p-8 md:p-12 shadow-2xl max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300"
+            style="background-color: var(--brand-bg)">
+            <button onclick="closeModal('modal2')"
+                class="absolute top-6 right-6 text-brand-subtext hover:text-brand-accent text-2xl transition-colors">✕</button>
+            <span class="text-brand-accent font-bold tracking-wider uppercase text-sm mb-2 block">Project Details</span>
+            <h3 class="text-3xl md:text-4xl font-extrabold mb-8 text-brand-header">Churn Predictor</h3>
+
+            <div
+                class="w-full aspect-video bg-gray-100 rounded-2xl mb-8 flex items-center justify-center border border-brand-border overflow-hidden shadow-inner">
+                <span class="text-brand-subtext font-medium">Video / Demo Embed Placeholder</span>
+            </div>
+
+            <div class="space-y-6 text-lg text-brand-text leading-relaxed">
+                <div>
+                    <h4 class="text-brand-header font-bold text-xl mb-2">Challenge & Solution</h4>
+                    <p>A machine learning project designed to predict customer churn based on usage patterns and support
+                        ticket history so the team could intervene proactively.</p>
+                </div>
+                <div class="bg-black/5 p-6 rounded-2xl border border-brand-border shadow-sm">
+                    <p class="mb-2"><span class="font-bold text-brand-header">Technologies:</span> Python
+                        (Scikit:learn), Pandas, Tableau.</p>
+                    <p><span class="font-bold text-brand-header">Outcome:</span> Identified high:risk customers with 85%
+                        accuracy.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div id="modal3" class="modal fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" onclick="closeModal('modal3')"></div>
+        <div class="glass-card rounded-3xl w-full max-w-4xl relative z-10 p-8 md:p-12 shadow-2xl max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300"
+            style="background-color: var(--brand-bg)">
+            <button onclick="closeModal('modal3')"
+                class="absolute top-6 right-6 text-brand-subtext hover:text-brand-accent text-2xl transition-colors">✕</button>
+            <span class="text-brand-accent font-bold tracking-wider uppercase text-sm mb-2 block">Project Details</span>
+            <h3 class="text-3xl md:text-4xl font-extrabold mb-8 text-brand-header">Supply Chain Ops</h3>
+
+            <div
+                class="w-full aspect-video bg-gray-100 rounded-2xl mb-8 flex items-center justify-center border border-brand-border overflow-hidden shadow-inner">
+                <span class="text-brand-subtext font-medium">Video / Demo Embed Placeholder</span>
+            </div>
+
+            <div class="space-y-6 text-lg text-brand-text leading-relaxed">
+                <div>
+                    <h4 class="text-brand-header font-bold text-xl mb-2">Challenge & Solution</h4>
+                    <p>Visualizing the entire supply chain process to identify bottlenecks in real:time before they
+                        impacted delivery schedules.</p>
+                </div>
+                <div class="bg-black/5 p-6 rounded-2xl border border-brand-border shadow-sm">
+                    <p class="mb-2"><span class="font-bold text-brand-header">Technologies:</span> Snowflake, Tableau,
+                        SQL.</p>
+                    <p><span class="font-bold text-brand-header">Outcome:</span> Improved inventory turnover by 15%.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div id="modal4" class="modal fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" onclick="closeModal('modal4')"></div>
+        <div class="glass-card rounded-3xl w-full max-w-4xl relative z-10 p-8 md:p-12 shadow-2xl max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300"
+            style="background-color: var(--brand-bg)">
+            <button onclick="closeModal('modal4')"
+                class="absolute top-6 right-6 text-brand-subtext hover:text-brand-accent text-2xl transition-colors">✕</button>
+            <span class="text-brand-accent font-bold tracking-wider uppercase text-sm mb-2 block">Project Details</span>
+            <h3 class="text-3xl md:text-4xl font-extrabold mb-8 text-brand-header">Marketing Attribution</h3>
+
+            <div
+                class="w-full aspect-video bg-gray-100 rounded-2xl mb-8 flex items-center justify-center border border-brand-border overflow-hidden shadow-inner">
+                <span class="text-brand-subtext font-medium">Video / Demo Embed Placeholder</span>
+            </div>
+
+            <div class="space-y-6 text-lg text-brand-text leading-relaxed">
+                <div>
+                    <h4 class="text-brand-header font-bold text-xl mb-2">Challenge & Solution</h4>
+                    <p>Developed a multi:touch attribution model to clear up ambiguity in ad spend ROI across various
+                        digital channels.</p>
+                </div>
+                <div class="bg-black/5 p-6 rounded-2xl border border-brand-border shadow-sm">
+                    <p class="mb-2"><span class="font-bold text-brand-header">Technologies:</span> Python, SQL, Google
+                        Analytics API.</p>
+                    <p><span class="font-bold text-brand-header">Outcome:</span> Optimized ad spend allocation,
+                        increasing ROAS by 20%.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('translate-x-full');
+        }
+
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            const modalContent = modal.querySelector('div.relative');
+
+            modal.classList.add('active');
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            const modalContent = modal.querySelector('div.relative');
+
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+
+            setTimeout(() => {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === "Escape") {
+                const modals = document.querySelectorAll('.modal.active');
+                modals.forEach(modal => {
+                    closeModal(modal.id);
+                });
+            }
+        });
+
+        // Theme Toggle Logic
+        function toggleTheme() {
+            const html = document.documentElement;
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Initialize theme from localStorage or default to light
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
 </body>
+
 </html>
