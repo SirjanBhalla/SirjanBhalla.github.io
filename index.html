@@ -241,11 +241,15 @@
     <section
         class="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-24 pt-20 pb-10 md:pt-0 gap-12 max-w-7xl mx-auto">
         <div class="md:w-1/2 space-y-8 animate-fade-in-up md:pr-12">
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-brand-header leading-[1.1]">
-                Hi! I'm <span class="text-brand-accent">Sirjan</span>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-brand-accent leading-[1.1]">
+                Hi! I'm <span class="text-brand-header">Sirjan</span>
             </h1>
             <p class="text-lg md:text-xl text-brand-subtext leading-relaxed max-w-lg">
-                BI & Data Analyst with 3+ years of experience scaling revenue and operational efficiency.
+                I bridge the gap between <span class="font-bold text-[#064E3B]">technical complexity</span> and
+                <span class="font-bold text-[#064E3B]">business clarity</span>. I go beyond delivering reports to
+                design <span class="font-bold text-[#064E3B]">scalable, automated environments</span>. These frameworks
+                empower <span class="font-bold text-[#064E3B]">leaders</span> to make <span
+                    class="font-bold text-[#064E3B]">smarter decisions faster</span>.
             </p>
             <div class="pt-6 flex flex-col md:flex-row flex-wrap gap-4 justify-center md:justify-start">
                 <!-- Projects -->
@@ -322,31 +326,35 @@
     </section>
 
     <!-- Impact Bar -->
-    <section id="impact" class="border-y border-brand-border bg-brand-card py-20 relative z-10">
+    <section id="impact" class="border-y border-brand-border py-20 relative z-10" style="background-color: #0A0F0D;">
         <div class="max-w-7xl mx-auto px-6 md:px-24">
             <div
                 class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-brand-border">
                 <div class="text-center px-4 py-6 md:py-0">
-                    <div class="text-5xl md:text-6xl font-black mb-2 drop-shadow-sm" style="color: var(--brand-stat)">4+
+                    <div class="text-5xl md:text-6xl font-black mb-2 drop-shadow-sm text-[#34D399]">
+                        <span class="stat-counter" data-target="4">0</span>+
                     </div>
                     <div class="text-xs md:text-sm font-bold uppercase tracking-widest text-brand-subtext">Years
                         Experience</div>
                 </div>
                 <div class="text-center px-4 py-6 md:py-0">
-                    <div class="text-5xl md:text-6xl font-black mb-2 drop-shadow-sm" style="color: var(--brand-stat)">
-                        25%</div>
+                    <div class="text-5xl md:text-6xl font-black mb-2 drop-shadow-sm text-[#34D399]">
+                        <span class="stat-counter" data-target="25">0</span>%
+                    </div>
                     <div class="text-xs md:text-sm font-bold uppercase tracking-widest text-brand-subtext">Revenue Boost
                     </div>
                 </div>
                 <div class="text-center px-4 py-6 md:py-0">
-                    <div class="text-5xl md:text-6xl font-black mb-2 drop-shadow-sm" style="color: var(--brand-stat)">
-                        80%</div>
+                    <div class="text-5xl md:text-6xl font-black mb-2 drop-shadow-sm text-[#34D399]">
+                        <span class="stat-counter" data-target="80">0</span>%
+                    </div>
                     <div class="text-xs md:text-sm font-bold uppercase tracking-widest text-brand-subtext">KPI Error
                         Reduction</div>
                 </div>
                 <div class="text-center px-4 py-6 md:py-0">
-                    <div class="text-5xl md:text-6xl font-black mb-2 drop-shadow-sm" style="color: var(--brand-stat)">
-                        90%</div>
+                    <div class="text-5xl md:text-6xl font-black mb-2 drop-shadow-sm text-[#34D399]">
+                        <span class="stat-counter" data-target="90">0</span>%
+                    </div>
                     <div class="text-xs md:text-sm font-bold uppercase tracking-widest text-brand-subtext">Automation
                         Imp</div>
                 </div>
@@ -718,6 +726,42 @@
                     closeModal(modal.id);
                 });
             }
+        });
+
+        // Stat Counter Animation
+        const stats = document.querySelectorAll('.stat-counter');
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const statObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = +counter.getAttribute('data-target');
+                    const duration = 2000; // 2 seconds
+                    const increment = target / (duration / 16); // 60fps
+
+                    let current = 0;
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            counter.textContent = Math.ceil(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target;
+                        }
+                    };
+                    updateCounter();
+                    observer.unobserve(counter);
+                }
+            });
+        }, observerOptions);
+
+        stats.forEach(stat => {
+            statObserver.observe(stat);
         });
 
         // Theme Toggle Logic
