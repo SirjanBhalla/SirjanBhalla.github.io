@@ -351,87 +351,161 @@
 
     <!-- Project Grid -->
     <section id="projects" class="py-24 px-6 md:px-24 max-w-7xl mx-auto relative z-10">
-        <span class="text-brand-accent font-bold tracking-wider uppercase text-sm mb-4 block">Portfolio</span>
-        <h2 class="text-4xl md:text-5xl font-extrabold mb-16 text-brand-header tracking-tight">Selected <span
+
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-16 text-brand-header tracking-tight">Featured <span
                 class="text-brand-accent">Projects</span></h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            <!-- Card 1 -->
-            <div
-                class="glass-card rounded-3xl p-8 shadow-card hover:shadow-glow hover:border-brand-accent transition-all duration-500 hover:-translate-y-2 group">
+        <div class="relative group">
+            <!-- Left Button -->
+            <button id="scrollLeftBtn" onclick="scrollCarousel(-1)"
+                class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-brand-bg text-[#10B981] rounded-full p-3 shadow-lg z-20 hidden md:flex items-center justify-center hover:scale-110 transition-transform border border-brand-border opacity-0 group-hover:opacity-100 duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+            </button>
+
+            <!-- Carousel Container -->
+            <div id="projectsCarousel"
+                class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar gap-6 pb-4 -mx-4 px-4 md:mx-0 md:px-0">
+                <!-- Card 1 -->
                 <div
-                    class="h-64 bg-brand-bg rounded-2xl mb-8 flex items-center justify-center overflow-hidden relative border border-brand-border">
-                    <div class="absolute inset-0 bg-brand-accent opacity-5 group-hover:opacity-10 transition-opacity">
+                    class="min-w-[85vw] md:min-w-[calc(33.333%-16px)] snap-center glass-card rounded-3xl p-8 shadow-card hover:shadow-glow hover:border-brand-accent transition-all duration-500 hover:-translate-y-2 group/card">
+                    <div
+                        class="h-64 rounded-2xl mb-8 flex items-center justify-center overflow-hidden relative border border-brand-border">
+                        <img src="images/First project thumbnail.png" alt="Real Time KPI Architecture"
+                            class="w-full h-full object-fill transition-transform duration-500 group-hover/card:scale-105">
+                        <div
+                            class="absolute inset-0 bg-brand-accent opacity-0 group-hover/card:opacity-10 transition-opacity">
+                        </div>
                     </div>
-                    <span class="text-brand-subtext font-medium z-10">Project Preview 1</span>
+
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span
+                            class="px-3 py-1 bg-brand-bg border border-brand-border rounded-full text-xs font-semibold text-brand-subtext">Python</span>
+                        <span
+                            class="px-3 py-1 bg-brand-bg border border-brand-border rounded-full text-xs font-semibold text-brand-subtext">Tableau</span>
+                        <span
+                            class="px-3 py-1 bg-brand-bg border border-brand-border rounded-full text-xs font-semibold text-brand-subtext">Pandas</span>
+                    </div>
+
+                    <h3
+                        class="text-2xl font-bold mb-3 text-brand-header group-hover/card:text-brand-accent transition-colors">
+                        Real Time Call Center KPI Architecture</h3>
+                    <p class="text-brand-text mb-8 leading-relaxed">Engineered a realistic collections environment using
+                        synthetic datasets to provide leaders with actionable operational clarity.</p>
+                    <button onclick="openModal('modal1')"
+                        class="text-brand-accent font-bold text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all group-hover/card:text-brand-header">
+                        View Project <span>→</span>
+                    </button>
                 </div>
-                <h3 class="text-2xl font-bold mb-3 text-brand-header group-hover:text-brand-accent transition-colors">
-                    Revenue Dashboard</h3>
-                <p class="text-brand-text mb-8 leading-relaxed">Optimizing sales tracking for a large retail client
-                    through intuitive data visualization.</p>
-                <button onclick="openModal('modal1')"
-                    class="text-brand-accent font-bold text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all group-hover:text-brand-header">
-                    View Project <span>→</span>
-                </button>
+
+                <!-- Card 2 -->
+                <div
+                    class="min-w-[85vw] md:min-w-[calc(33.333%-16px)] snap-center glass-card rounded-3xl p-8 shadow-card hover:shadow-glow hover:border-brand-accent transition-all duration-500 hover:-translate-y-2 group/card">
+                    <div
+                        class="h-64 bg-brand-bg rounded-2xl mb-8 flex items-center justify-center overflow-hidden relative border border-brand-border">
+                        <div
+                            class="absolute inset-0 bg-brand-accent opacity-5 group-hover/card:opacity-10 transition-opacity">
+                        </div>
+                        <span class="text-brand-subtext font-medium z-10">Project Preview 2</span>
+                    </div>
+                    <h3
+                        class="text-2xl font-bold mb-3 text-brand-header group-hover/card:text-brand-accent transition-colors">
+                        Churn Predictor</h3>
+                    <p class="text-brand-text mb-8 leading-relaxed">Machine learning model to identify at:risk customers
+                        before they leave.</p>
+                    <button onclick="openModal('modal2')"
+                        class="text-brand-accent font-bold text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all group-hover/card:text-brand-header">
+                        View Project <span>→</span>
+                    </button>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="min-w-[85vw] md:min-w-[calc(33.333%-16px)] snap-center glass-card rounded-3xl p-8 shadow-card hover:shadow-glow hover:border-brand-accent transition-all duration-500 hover:-translate-y-2 group/card">
+                    <div
+                        class="h-64 bg-brand-bg rounded-2xl mb-8 flex items-center justify-center overflow-hidden relative border border-brand-border">
+                        <div
+                            class="absolute inset-0 bg-brand-accent opacity-5 group-hover/card:opacity-10 transition-opacity">
+                        </div>
+                        <span class="text-brand-subtext font-medium z-10">Project Preview 3</span>
+                    </div>
+                    <h3
+                        class="text-2xl font-bold mb-3 text-brand-header group-hover/card:text-brand-accent transition-colors">
+                        Supply Chain Ops</h3>
+                    <p class="text-brand-text mb-8 leading-relaxed">Real:time visualization of logistics and inventory
+                        to
+                        prevent bottlenecks.</p>
+                    <button onclick="openModal('modal3')"
+                        class="text-brand-accent font-bold text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all group-hover/card:text-brand-header">
+                        View Project <span>→</span>
+                    </button>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="min-w-[85vw] md:min-w-[calc(33.333%-16px)] snap-center glass-card rounded-3xl p-8 shadow-card hover:shadow-glow hover:border-brand-accent transition-all duration-500 hover:-translate-y-2 group/card">
+                    <div
+                        class="h-64 bg-brand-bg rounded-2xl mb-8 flex items-center justify-center overflow-hidden relative border border-brand-border">
+                        <div
+                            class="absolute inset-0 bg-brand-accent opacity-5 group-hover/card:opacity-10 transition-opacity">
+                        </div>
+                        <span class="text-brand-subtext font-medium z-10">Project Preview 4</span>
+                    </div>
+                    <h3
+                        class="text-2xl font-bold mb-3 text-brand-header group-hover/card:text-brand-accent transition-colors">
+                        Marketing Attribution</h3>
+                    <p class="text-brand-text mb-8 leading-relaxed">Multi:touch attribution model to clear up ambiguity
+                        in
+                        ad spend ROI.</p>
+                    <button onclick="openModal('modal4')"
+                        class="text-brand-accent font-bold text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all group-hover/card:text-brand-header">
+                        View Project <span>→</span>
+                    </button>
+                </div>
+
+                <!-- Card 5 -->
+                <div
+                    class="min-w-[85vw] md:min-w-[calc(33.333%-16px)] snap-center glass-card rounded-3xl p-8 shadow-card hover:shadow-glow hover:border-brand-accent transition-all duration-500 hover:-translate-y-2 group/card">
+                    <div
+                        class="h-64 bg-brand-bg rounded-2xl mb-8 flex items-center justify-center overflow-hidden relative border border-brand-border">
+                        <div
+                            class="absolute inset-0 bg-brand-accent opacity-5 group-hover/card:opacity-10 transition-opacity">
+                        </div>
+                        <span class="text-brand-subtext font-medium z-10">Project Preview 5</span>
+                    </div>
+                    <h3
+                        class="text-2xl font-bold mb-3 text-brand-header group-hover/card:text-brand-accent transition-colors">
+                        New Project</h3>
+                    <p class="text-brand-text mb-8 leading-relaxed">Description for the new project goes here.</p>
+                    <button onclick="openModal('modal5')"
+                        class="text-brand-accent font-bold text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all group-hover/card:text-brand-header">
+                        View Project <span>→</span>
+                    </button>
+                </div>
             </div>
 
-            <!-- Card 2 -->
-            <div
-                class="glass-card rounded-3xl p-8 shadow-card hover:shadow-glow hover:border-brand-accent transition-all duration-500 hover:-translate-y-2 group">
-                <div
-                    class="h-64 bg-brand-bg rounded-2xl mb-8 flex items-center justify-center overflow-hidden relative border border-brand-border">
-                    <div class="absolute inset-0 bg-brand-accent opacity-5 group-hover:opacity-10 transition-opacity">
-                    </div>
-                    <span class="text-brand-subtext font-medium z-10">Project Preview 2</span>
-                </div>
-                <h3 class="text-2xl font-bold mb-3 text-brand-header group-hover:text-brand-accent transition-colors">
-                    Churn Predictor</h3>
-                <p class="text-brand-text mb-8 leading-relaxed">Machine learning model to identify at:risk customers
-                    before they leave.</p>
-                <button onclick="openModal('modal2')"
-                    class="text-brand-accent font-bold text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all group-hover:text-brand-header">
-                    View Project <span>→</span>
-                </button>
-            </div>
-
-            <!-- Card 3 -->
-            <div
-                class="glass-card rounded-3xl p-8 shadow-card hover:shadow-glow hover:border-brand-accent transition-all duration-500 hover:-translate-y-2 group">
-                <div
-                    class="h-64 bg-brand-bg rounded-2xl mb-8 flex items-center justify-center overflow-hidden relative border border-brand-border">
-                    <div class="absolute inset-0 bg-brand-accent opacity-5 group-hover:opacity-10 transition-opacity">
-                    </div>
-                    <span class="text-brand-subtext font-medium z-10">Project Preview 3</span>
-                </div>
-                <h3 class="text-2xl font-bold mb-3 text-brand-header group-hover:text-brand-accent transition-colors">
-                    Supply Chain Ops</h3>
-                <p class="text-brand-text mb-8 leading-relaxed">Real:time visualization of logistics and inventory to
-                    prevent bottlenecks.</p>
-                <button onclick="openModal('modal3')"
-                    class="text-brand-accent font-bold text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all group-hover:text-brand-header">
-                    View Project <span>→</span>
-                </button>
-            </div>
-
-            <!-- Card 4 -->
-            <div
-                class="glass-card rounded-3xl p-8 shadow-card hover:shadow-glow hover:border-brand-accent transition-all duration-500 hover:-translate-y-2 group">
-                <div
-                    class="h-64 bg-brand-bg rounded-2xl mb-8 flex items-center justify-center overflow-hidden relative border border-brand-border">
-                    <div class="absolute inset-0 bg-brand-accent opacity-5 group-hover:opacity-10 transition-opacity">
-                    </div>
-                    <span class="text-brand-subtext font-medium z-10">Project Preview 4</span>
-                </div>
-                <h3 class="text-2xl font-bold mb-3 text-brand-header group-hover:text-brand-accent transition-colors">
-                    Marketing Attribution</h3>
-                <p class="text-brand-text mb-8 leading-relaxed">Multi:touch attribution model to clear up ambiguity in
-                    ad spend ROI.</p>
-                <button onclick="openModal('modal4')"
-                    class="text-brand-accent font-bold text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all group-hover:text-brand-header">
-                    View Project <span>→</span>
-                </button>
-            </div>
+            <!-- Right Button -->
+            <button id="scrollRightBtn" onclick="scrollCarousel(1)"
+                class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-brand-bg text-[#10B981] rounded-full p-3 shadow-lg z-20 hidden md:flex items-center justify-center hover:scale-110 transition-transform border border-brand-border opacity-0 group-hover:opacity-100 duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            </button>
         </div>
+
+        <script>
+            function scrollCarousel(direction) {
+                const container = document.getElementById('projectsCarousel');
+                const scrollAmount = container.offsetWidth * 0.8; // Scroll 80% of view width
+                container.scrollBy({
+                    left: direction * scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+        </script>
     </section>
 
     <!-- Core Competencies -->
@@ -579,23 +653,45 @@
             <button onclick="closeModal('modal1')"
                 class="absolute top-6 right-6 text-brand-subtext hover:text-brand-accent text-2xl transition-colors">✕</button>
             <span class="text-brand-accent font-bold tracking-wider uppercase text-sm mb-2 block">Project Details</span>
-            <h3 class="text-3xl md:text-4xl font-extrabold mb-8 text-brand-header">Revenue Dashboard</h3>
+            <h3 class="text-3xl md:text-4xl font-extrabold mb-8 text-brand-header">Real Time Call Center KPI
+                Architecture</h3>
 
-            <div
-                class="w-full aspect-video bg-gray-100 rounded-2xl mb-8 flex items-center justify-center border border-brand-border overflow-hidden shadow-inner">
-                <span class="text-brand-subtext font-medium">Video / Demo Embed Placeholder</span>
+            <div class="mb-8 flex justify-center">
+                <a href="https://public.tableau.com/views/RealTimeCallCenterKPIArchitecture/Summary?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+                    target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center bg-brand-accent text-brand-bg px-8 py-4 rounded-full text-lg font-bold shadow-soft hover:shadow-glow hover:-translate-y-1 transition-all gap-2"
+                    style="color:white">
+                    <img src="https://cdn.brandfetch.io/id9sYMA_Im/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1668082242510"
+                        alt="Tableau" class="w-6 h-6 invert brightness-0">
+                    View Interactive Dashboard
+                </a>
             </div>
 
             <div class="space-y-6 text-lg text-brand-text leading-relaxed">
                 <div>
-                    <h4 class="text-brand-header font-bold text-xl mb-2">Challenge & Solution</h4>
-                    <p>This project involved creating a comprehensive revenue tracking dashboard for a retail client.
-                        The goal was to visualize daily sales performance across multiple regions.</p>
+                    <h4 class="text-brand-header font-bold text-xl mb-2">Context</h4>
+                    <p>In high volume collections environments, leadership often struggles to identify patterns across
+                        vast datasets. I simulated a realistic business environment to bridge the gap between raw call
+                        logs and executive decision support.</p>
                 </div>
+
+                <div>
+                    <h4 class="text-brand-header font-bold text-xl mb-2">Action</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-brand-text">
+                        <li><strong class="text-brand-header">Data Engineering:</strong> Used the Faker library in
+                            Python to generate a sophisticated dataset that mirrored industry trends.</li>
+                        <li><strong class="text-brand-header">Business Logic:</strong> Programmed specific constraints
+                            for holiday based behavior and time of day trends to avoid statistical flatness.</li>
+                        <li><strong class="text-brand-header">Visualization:</strong> Designed a Tableau dashboard with
+                            drill down capabilities to track RPC rates, payment conversions, and silence time.</li>
+                    </ul>
+                </div>
+
                 <div class="bg-black/5 p-6 rounded-2xl border border-brand-border shadow-sm">
-                    <p class="mb-2"><span class="font-bold text-brand-header">Technologies:</span> SQL for data
-                        extraction, Power BI for visualization.</p>
-                    <p><span class="font-bold text-brand-header">Outcome:</span> Reduced reporting time by 40%.</p>
+                    <h4 class="text-brand-header font-bold text-xl mb-2">Result</h4>
+                    <p>The project successfully translated complex operational trends into a standardized reporting
+                        framework. This architecture allows managers to monitor agent performance and call outcomes with
+                        real time clarity, reducing the manual effort required for data exploration.</p>
                 </div>
             </div>
         </div>
@@ -688,6 +784,34 @@
                         Analytics API.</p>
                     <p><span class="font-bold text-brand-header">Outcome:</span> Optimized ad spend allocation,
                         increasing ROAS by 20%.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5 -->
+    <div id="modal5" class="modal fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" onclick="closeModal('modal5')"></div>
+        <div class="glass-card rounded-3xl w-full max-w-4xl relative z-10 p-8 md:p-12 shadow-2xl max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300"
+            style="background-color: var(--brand-bg)">
+            <button onclick="closeModal('modal5')"
+                class="absolute top-6 right-6 text-brand-subtext hover:text-brand-accent text-2xl transition-colors">✕</button>
+            <span class="text-brand-accent font-bold tracking-wider uppercase text-sm mb-2 block">Project Details</span>
+            <h3 class="text-3xl md:text-4xl font-extrabold mb-8 text-brand-header">New Project</h3>
+
+            <div
+                class="w-full aspect-video bg-gray-100 rounded-2xl mb-8 flex items-center justify-center border border-brand-border overflow-hidden shadow-inner">
+                <span class="text-brand-subtext font-medium">Video / Demo Embed Placeholder</span>
+            </div>
+
+            <div class="space-y-6 text-lg text-brand-text leading-relaxed">
+                <div>
+                    <h4 class="text-brand-header font-bold text-xl mb-2">Challenge & Solution</h4>
+                    <p>Description of the challenge and solution for the new project.</p>
+                </div>
+                <div class="bg-black/5 p-6 rounded-2xl border border-brand-border shadow-sm">
+                    <p class="mb-2"><span class="font-bold text-brand-header">Technologies:</span> Tech Stack.</p>
+                    <p><span class="font-bold text-brand-header">Outcome:</span> Key results and impact.</p>
                 </div>
             </div>
         </div>
