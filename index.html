@@ -191,10 +191,14 @@
             class="bg-brand-card backdrop-blur-xl border border-brand-border shadow-soft rounded-full px-8 py-3 flex items-center gap-8 md:gap-12 transition-all hover:bg-opacity-90 hover:shadow-glow">
             <a href="#" class="text-xl font-extrabold tracking-tight text-brand-header">SIRJAN</a>
             <div class="hidden md:flex gap-8 text-sm font-semibold text-brand-subtext items-center">
-                <a href="#impact" class="hover:text-brand-accent hover:underline underline-offset-4 transition-colors">Impact</a>
-                <a href="#projects" class="hover:text-brand-accent hover:underline underline-offset-4 transition-colors">Projects</a>
-                <a href="#journey" class="hover:text-brand-accent hover:underline underline-offset-4 transition-colors">Journey</a>
-                <a href="#contact" class="hover:text-brand-accent hover:underline underline-offset-4 transition-colors">Contact</a>
+                <a href="#impact"
+                    class="hover:text-brand-accent hover:underline underline-offset-4 transition-colors">Impact</a>
+                <a href="#projects"
+                    class="hover:text-brand-accent hover:underline underline-offset-4 transition-colors">Projects</a>
+                <a href="#journey"
+                    class="hover:text-brand-accent hover:underline underline-offset-4 transition-colors">Journey</a>
+                <a href="#contact"
+                    class="hover:text-brand-accent hover:underline underline-offset-4 transition-colors">Contact</a>
             </div>
 
             <div class="flex items-center gap-4">
@@ -231,10 +235,14 @@
         class="fixed inset-0 bg-brand-bg z-[100] flex flex-col items-center justify-center gap-8 text-2xl font-bold text-brand-header transform translate-x-full transition-transform duration-300 md:hidden">
         <button class="absolute top-8 right-8 text-4xl text-brand-subtext hover:text-brand-accent"
             onclick="toggleMobileMenu()">×</button>
-        <a href="#impact" onclick="toggleMobileMenu()" class="hover:text-brand-accent hover:underline underline-offset-4">Impact</a>
-        <a href="#projects" onclick="toggleMobileMenu()" class="hover:text-brand-accent hover:underline underline-offset-4">Projects</a>
-        <a href="#journey" onclick="toggleMobileMenu()" class="hover:text-brand-accent hover:underline underline-offset-4">Journey</a>
-        <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-brand-accent hover:underline underline-offset-4">Contact</a>
+        <a href="#impact" onclick="toggleMobileMenu()"
+            class="hover:text-brand-accent hover:underline underline-offset-4">Impact</a>
+        <a href="#projects" onclick="toggleMobileMenu()"
+            class="hover:text-brand-accent hover:underline underline-offset-4">Projects</a>
+        <a href="#journey" onclick="toggleMobileMenu()"
+            class="hover:text-brand-accent hover:underline underline-offset-4">Journey</a>
+        <a href="#contact" onclick="toggleMobileMenu()"
+            class="hover:text-brand-accent hover:underline underline-offset-4">Contact</a>
     </div>
 
     <!-- Hero Section -->
@@ -573,21 +581,59 @@
     </section>
 
     <!-- My Journey -->
-    <section id="journey" class="py-12 px-6 md:px-24 relative z-10 text-center md:text-left">
-        <div class="max-w-4xl mx-auto">
+    <section id="journey" class="py-12 px-6 md:px-24 relative z-10">
+        <div class="max-w-6xl mx-auto">
 
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-12 text-brand-header tracking-tight">My <span
-                    class="text-brand-accent">Journey</span></h2>
-            <div
-                class="glass-card p-8 md:p-12 rounded-3xl shadow-sm space-y-8 text-lg md:text-xl text-brand-text leading-loose">
-                <p>
-                    I got into analytics the hard way. I started as a data annotator, taught myself the stack, and made
-                    the case to transfer into the analytics function. Within three years I was the primary analytics
-                    resource for the team, responsible for both internal reporting and every customer-facing output.
-                </p>
-                <p>
-                    That instinct to find the work rather than wait for it is still how I operate.
-                </p>
+            <h2
+                class="text-4xl md:text-5xl font-extrabold mb-12 text-brand-header tracking-tight text-center md:text-left">
+                My <span class="text-brand-accent">Journey</span></h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+
+                <!-- Left: Prose -->
+                <div class="space-y-8 text-lg md:text-xl text-brand-text leading-loose">
+                    <p>
+                        I got into analytics the hard way. I started as a data annotator, taught myself the stack, and
+                        made
+                        the case to transfer into the analytics function. Within three years I was the primary analytics
+                        resource for the team, responsible for both internal reporting and every customer-facing output.
+                    </p>
+                    <p>
+                        Over three years I have worked across financial services and tech operations, building analytics
+                        end-to-end. That means data pipelines and gold-layer sources in Databricks, executive reporting
+                        systems in Tableau and Power BI, and the data quality work that makes all of it trustworthy.
+                        < At Nokia I took the same approach into a strategy and operations context, delivering Power BI
+                            solutions and automated workflows for a global telecom team. </p>
+                            <p>
+                                That instinct to find the work rather than wait for it is still how I operate.
+                            </p>
+                </div>
+
+                <!-- Right: Timeline -->
+                <div class="relative ml-4 border-l-2 border-brand-accent space-y-10 pl-6 pt-1">
+
+                    <!-- Entry 1 -->
+                    <div class="relative">
+                        <span
+                            class="absolute -left-[31px] top-1 w-3 h-3 rounded-full bg-brand-accent ring-4 ring-brand-bg"></span>
+                        <p class="text-brand-header font-bold text-lg leading-snug">Nokia</p>
+                        <p class="text-brand-text font-medium">Strategy &amp; Operations Co-op Analyst</p>
+                        <p class="text-brand-subtext text-sm mt-0.5">Sep 2025 – Dec 2025</p>
+                    </div>
+
+
+                    <!-- Entry 2 -->
+
+                    <div class="relative">
+                        <span
+                            class="absolute -left-[31px] top-1 w-3 h-3 rounded-full bg-brand-accent ring-4 ring-brand-bg"></span>
+                        <p class="text-brand-header font-bold text-lg leading-snug">Prodigal Technologies</p>
+                        <p class="text-brand-text font-medium">Business Intelligence Analyst</p>
+                        <p class="text-brand-subtext text-sm mt-0.5">Aug 2022 – Aug 2025</p>
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </section>
