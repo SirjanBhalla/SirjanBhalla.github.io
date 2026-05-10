@@ -127,6 +127,24 @@
             background: var(--ambient-2);
         }
 
+        /* Availability Badge */
+        .availability-badge {
+            background-color: rgba(6, 78, 59, 0.10);
+            border: 1px solid #064E3B;
+            color: #064E3B;
+        }
+        .availability-dot {
+            background-color: #064E3B;
+        }
+        [data-theme="dark"] .availability-badge {
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: #ffffff;
+        }
+        [data-theme="dark"] .availability-dot {
+            background-color: #ffffff;
+        }
+
         /* Glass Card (Modified for solid dark mode cards per request, but keeping class name) */
         .glass-card {
             background: var(--brand-card);
@@ -258,10 +276,8 @@
             </h2>
             <!-- Availability Badge -->
             <div class="flex justify-center md:justify-start">
-                <span class="inline-flex items-center gap-2 text-xs font-semibold px-4 py-1.5 rounded-full"
-                    style="background-color: rgba(6,78,59,0.10); border: 1px solid #064E3B; color: #064E3B;">
-                    <span class="w-2 h-2 rounded-full inline-block animate-pulse"
-                        style="background-color: #064E3B;"></span>
+                <span class="availability-badge inline-flex items-center gap-2 text-xs font-semibold px-4 py-1.5 rounded-full">
+                    <span class="availability-dot w-2 h-2 rounded-full inline-block animate-pulse"></span>
                     Open to BI &amp; Data Analyst Roles in Canada
                 </span>
             </div>
@@ -482,6 +498,11 @@
                 <div
                     class="min-w-[85vw] md:min-w-[calc(33.333%-16px)] snap-center glass-card rounded-3xl p-8 shadow-card hover:shadow-glow hover:border-brand-accent transition-all duration-500 hover:-translate-y-2 group/card">
 
+                    <div class="mb-2">
+                        <span
+                            class="px-2.5 py-0.5 bg-brand-bg/60 border border-brand-border/50 rounded-full text-[11px] text-brand-subtext/60 tracking-wide">Academic
+                            Project</span>
+                    </div>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span
                             class="px-3 py-1 bg-brand-bg border border-brand-border rounded-full text-xs font-semibold text-brand-subtext">Python</span>
@@ -509,6 +530,11 @@
                 <div
                     class="min-w-[85vw] md:min-w-[calc(33.333%-16px)] snap-center glass-card rounded-3xl p-8 shadow-card hover:shadow-glow hover:border-brand-accent transition-all duration-500 hover:-translate-y-2 group/card">
 
+                    <div class="mb-2">
+                        <span
+                            class="px-2.5 py-0.5 bg-brand-bg/60 border border-brand-border/50 rounded-full text-[11px] text-brand-subtext/60 tracking-wide">Academic
+                            Project</span>
+                    </div>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span
                             class="px-3 py-1 bg-brand-bg border border-brand-border rounded-full text-xs font-semibold text-brand-subtext">Python</span>
@@ -944,30 +970,36 @@
             <div class="space-y-6 text-lg text-brand-text leading-relaxed">
                 <div>
                     <h4 class="text-brand-header font-bold text-xl mb-2">Context</h4>
-                    <p>Research partner registrations were being managed entirely through email and spreadsheets. There
-                        was no way to track participation, match faculty systematically, or give leadership any view
-                        into what was happening across the program.</p>
+                    <p>Algonquin College's Applied Research department was managing faculty project registrations and
+                        external partner matching entirely through email and spreadsheets. There was no centralized way
+                        to track submissions, match faculty to partners systematically, or give the administrative team
+                        any consistent visibility into program activity. Built as a capstone project with the Applied
+                        Research department as the client, the goal was to replace that fragmented process with a single
+                        automated platform.</p>
                 </div>
 
                 <div>
                     <h4 class="text-brand-header font-bold text-xl mb-2">Action</h4>
                     <ul class="list-disc pl-5 space-y-2 text-brand-text">
-                        <li><strong class="text-brand-header">Centralized Hub:</strong> Built a SharePoint system to
-                            collect and organize all project proposals in a single, secure location.</li>
-                        <li><strong class="text-brand-header">Smart Automation:</strong> Created Power Automate
-                            workflows to handle instant notifications and match faculty with external partners based on
-                            academic criteria.</li>
-                        <li><strong class="text-brand-header">Executive Visibility:</strong> Designed Power BI
-                            dashboards to provide leadership with a real time view of project trends and engagement
-                            metrics.</li>
+                        <li><strong class="text-brand-header">Centralized Hub:</strong> Built role-specific SharePoint
+                            pages for faculty, external partners, and administrators, each with tailored forms, access
+                            permissions, and partner availability lists to standardize how data entered the system.</li>
+                        <li><strong class="text-brand-header">Smart Automation:</strong> Designed Power Automate
+                            workflows to handle form submissions end-to-end, including automated faculty-partner
+                            matching by academic school and term, conditional email logic based on contact disclosure
+                            preferences, and real-time notifications.</li>
+                        <li><strong class="text-brand-header">Executive Visibility:</strong> Built a four-view Power BI
+                            dashboard covering faculty participation, project trends, external partner engagement, and
+                            an equity tracking view for Indigenous participation, powered directly from SharePoint
+                            lists.</li>
                     </ul>
                 </div>
 
                 <div class="bg-black/5 p-6 rounded-2xl border border-brand-border shadow-sm">
                     <h4 class="text-brand-header font-bold text-xl mb-2">Result</h4>
-                    <p>Eliminated manual coordination overhead entirely. Leadership went from zero visibility into the
-                        program to a real-time dashboard. Handed off with full documentation and built to scale across
-                        the broader organization.</p>
+                    <p>Delivered a fully working platform to a real institutional client, replacing a manual
+                        coordination process with an end-to-end automated system. Handed off with full documentation and
+                        built with scalability in mind for future integration into broader institutional workflows.</p>
                 </div>
             </div>
         </div>
@@ -1084,9 +1116,11 @@
             <div class="space-y-6 text-lg text-brand-text leading-relaxed">
                 <div>
                     <h4 class="text-brand-header font-bold text-xl mb-2">Context</h4>
-                    <p>Navigating graduate school applications involves significant uncertainty. I built this predictive
-                        tool to help applicants quantify their admission chances based on standardized academic metrics
-                        and research profiles.</p>
+                    <p>Graduate school applications involve a lot of uncertainty with limited objective feedback. Built
+                        during my graduate studies in BI Systems Infrastructure at Algonquin, this project uses a UCLA
+                        admissions dataset to explore whether standardized academic inputs like GRE, TOEFL, and CGPA can
+                        reliably predict admission probability. The goal was to practice building end-to-end ML
+                        pipelines with a clean, usable interface.</p>
                 </div>
 
                 <div>
@@ -1157,9 +1191,12 @@
             <div class="space-y-6 text-lg text-brand-text leading-relaxed">
                 <div>
                     <h4 class="text-brand-header font-bold text-xl mb-2">Context</h4>
-                    <p>Real estate pricing is influenced by a complex mix of property features and market cycles. I
-                        built this tool to provide homeowners and investors with an objective, data driven estimate that
-                        considers both house specific details and the wider economic climate.</p>
+                    <p>Property pricing is driven by a mix of physical attributes and broader market conditions that are
+                        hard to weigh manually. Built during my graduate studies at Algonquin, this project uses a
+                        public real estate dataset to explore how ensemble models handle non-linear relationships
+                        between features like lot size, property type, and economic indicators including recession
+                        periods and neighborhood popularity. The goal was to practice feature engineering and model
+                        deployment end-to-end.</p>
                 </div>
 
                 <div>
