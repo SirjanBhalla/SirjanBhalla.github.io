@@ -655,59 +655,135 @@
     </section>
 
     <!-- My Journey -->
-    <section id="journey" class="py-12 px-6 md:px-24 relative z-10">
-        <div class="max-w-6xl mx-auto">
+    <section id="journey" class="py-20 px-6 md:px-24 relative z-10">
+        <div class="max-w-3xl mx-auto">
 
             <h2
-                class="text-4xl md:text-5xl font-extrabold mb-12 text-brand-header tracking-tight text-center md:text-left">
+                class="text-4xl md:text-5xl font-extrabold mb-16 text-brand-header tracking-tight text-center md:text-left">
                 My <span class="text-brand-accent">Journey</span></h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <!-- Timeline -->
+            <div class="relative border-l-2 border-brand-accent ml-3 space-y-14 pl-8 pt-1">
 
-                <!-- Left: Prose -->
-                <div class="space-y-8 text-lg md:text-xl text-brand-text leading-loose">
-                    <p>
-                        I got into analytics the hard way. I started as a data annotator, taught myself the stack, and
-                        made
-                        the case to transfer into the analytics function. Within three years I was the primary analytics
-                        resource for the team, responsible for both internal reporting and every customer-facing output.
+                <!-- Milestone 4 (displayed first): Nokia -->
+                <div class="relative">
+                    <span
+                        class="absolute -left-[39px] top-1 w-4 h-4 rounded-full bg-brand-accent ring-4 ring-brand-bg"></span>
+                    <p class="text-brand-header font-extrabold text-xl leading-snug">Nokia</p>
+                    <p class="text-brand-accent font-semibold text-sm mt-0.5">Strategy &amp; Operations Co-op Analyst
                     </p>
-                    <p>
-                        Over three years I have worked across financial services and tech operations, building analytics
-                        end-to-end. That means data pipelines and gold-layer sources in Databricks, executive reporting
-                        systems in Tableau and Power BI, and the data quality work that makes all of it trustworthy.
+                    <p class="text-brand-subtext text-sm mt-0.5 flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 inline shrink-0" fill="none"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                        </svg>
+                        Ottawa, Canada
                     </p>
-                    <p>
-                        At Nokia I took the same approach into a strategy and operations context, delivering Power BI
-                        solutions and automated workflows for a global telecom team. </p>
-                    <p>
-                        That instinct to find the work rather than wait for it is still how I operate.
+                    <p class="text-brand-subtext text-sm mt-1 mb-3">Sep 2025 – Dec 2025</p>
+                    <p class="text-brand-text leading-relaxed">
+                        Different industry. Different scale. Same instinct. Walked into Nokia and found the reporting
+                        gaps before anyone asked me to. Left with production dashboards and workflows that the team
+                        could actually use.
                     </p>
                 </div>
 
-                <!-- Right: Timeline -->
-                <div class="relative ml-4 border-l-2 border-brand-accent space-y-10 pl-6 pt-1">
-
-                    <!-- Entry 1 -->
-                    <div class="relative">
-                        <span
-                            class="absolute -left-[31px] top-1 w-3 h-3 rounded-full bg-brand-accent ring-4 ring-brand-bg"></span>
-                        <p class="text-brand-header font-bold text-lg leading-snug">Nokia</p>
-                        <p class="text-brand-text font-medium">Strategy &amp; Operations Co-op Analyst</p>
-                        <p class="text-brand-subtext text-sm mt-0.5">Sep 2025 – Dec 2025</p>
+                <!-- Milestone 3 (displayed second): Dual-card — Algonquin + Prodigal -->
+                <div class="relative">
+                    <span
+                        class="absolute -left-[39px] top-1 w-4 h-4 rounded-full bg-brand-accent ring-4 ring-brand-bg"></span>
+                    <!-- Two cards side by side -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-3">
+                        <!-- Left card: Algonquin -->
+                        <div class="glass-card rounded-2xl p-4 border border-brand-border">
+                            <p class="text-brand-header font-extrabold text-base leading-snug">Algonquin College</p>
+                            <p class="text-brand-accent font-semibold text-xs mt-0.5">Business Intelligence System
+                                Infrastructure</p>
+                            <p class="text-brand-subtext text-xs mt-0.5 flex items-center gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 inline shrink-0" fill="none"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                                </svg>
+                                Ottawa, Canada
+                            </p>
+                            <p class="text-brand-subtext text-xs mt-1">Jan 2025 – Dec 2025</p>
+                        </div>
+                        <!-- Right card: Prodigal -->
+                        <div class="glass-card rounded-2xl p-4 border border-brand-border">
+                            <p class="text-brand-header font-extrabold text-base leading-snug">Prodigal Technologies</p>
+                            <p class="text-brand-accent font-semibold text-xs mt-0.5">Business Intelligence Analyst</p>
+                            <p class="text-brand-subtext text-xs mt-0.5 flex items-center gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 inline shrink-0" fill="none"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                                </svg>
+                                Ottawa, Canada
+                            </p>
+                            <p class="text-brand-subtext text-xs mt-1">Jan 2025 – Aug 2025</p>
+                        </div>
                     </div>
+                    <!-- Shared story -->
+                    <p class="text-brand-text leading-relaxed">
+                        I went back to school while still working full-time. It was a lot, but I wanted the credential
+                        to match the experience I had already built. Graduated with honours and made the Dean's Honours
+                        List every semester.
+                    </p>
+                </div>
 
+                <!-- Milestone 2 (displayed third): Prodigal Technologies -->
+                <div class="relative">
+                    <span
+                        class="absolute -left-[39px] top-1 w-4 h-4 rounded-full bg-brand-accent ring-4 ring-brand-bg"></span>
+                    <p class="text-brand-header font-extrabold text-xl leading-snug">Prodigal Technologies</p>
+                    <p class="text-brand-accent font-semibold text-sm mt-0.5">Business Intelligence Analyst</p>
+                    <p class="text-brand-subtext text-sm mt-0.5 flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 inline shrink-0" fill="none"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                        </svg>
+                        India · Remote
+                    </p>
+                    <p class="text-brand-subtext text-sm mt-1 mb-3">Aug 2022 – Dec 2024</p>
+                    <p class="text-brand-text leading-relaxed">
+                        I came in as a data annotator with no formal BI experience. I spent nights learning the stack,
+                        asked to take on more, and eventually built the reporting infrastructure the company ran on.
+                        Three years of figuring it out as I went.
+                    </p>
+                </div>
 
-                    <!-- Entry 2 -->
-
-                    <div class="relative">
-                        <span
-                            class="absolute -left-[31px] top-1 w-3 h-3 rounded-full bg-brand-accent ring-4 ring-brand-bg"></span>
-                        <p class="text-brand-header font-bold text-lg leading-snug">Prodigal Technologies</p>
-                        <p class="text-brand-text font-medium">Business Intelligence Analyst</p>
-                        <p class="text-brand-subtext text-sm mt-0.5">Aug 2022 – Aug 2025</p>
-                    </div>
-
+                <!-- Milestone 1 (displayed last): Chitkara University -->
+                <div class="relative">
+                    <span
+                        class="absolute -left-[39px] top-1 w-4 h-4 rounded-full bg-brand-accent ring-4 ring-brand-bg"></span>
+                    <p class="text-brand-header font-extrabold text-xl leading-snug">Chitkara University</p>
+                    <p class="text-brand-accent font-semibold text-sm mt-0.5">Bachelor of Engineering, Computer Science
+                    </p>
+                    <p class="text-brand-subtext text-sm mt-0.5 flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 inline shrink-0" fill="none"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                        </svg>
+                        India
+                    </p>
+                    <p class="text-brand-subtext text-sm mt-1 mb-3">Aug 2018 – Aug 2022</p>
+                    <p class="text-brand-text leading-relaxed">
+                        I studied computer science and specialized in ML and data analytics. I didn't know exactly where
+                        it was taking me yet, but the instinct to work with data was already there.
+                    </p>
                 </div>
 
             </div>
