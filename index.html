@@ -820,8 +820,10 @@
                 <!-- Email Me -->
                 <a href="mailto:sirjanb.can@gmail.com"
                     class="w-full sm:w-auto bg-brand-accent text-white px-10 py-4 rounded-full text-lg font-bold shadow-soft hover:shadow-glow hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                     </svg>
                     Email Me
                 </a>
@@ -881,30 +883,35 @@
             <div class="space-y-6 text-lg text-brand-text leading-relaxed">
                 <div>
                     <h4 class="text-brand-header font-bold text-xl mb-2">Context</h4>
-                    <p>Collections environments generate large volumes of call data but most operational teams have no
-                        structured way to monitor agent performance or call outcomes without manual digging. I built
-                        this project to demonstrate what that reporting infrastructure looks like when properly
-                        architected, using a synthetic dataset modeled on real industry behavior including time-of-day
-                        trends and holiday patterns.</p>
+                    <p>In a previous role, ops teams received a daily agent performance report I built. It was used to
+                        make real decisions about which agents needed coaching, which showed no signs of improvement,
+                        and which were performing well enough to benchmark others against. This project is a public
+                        recreation of that architecture using a synthetic dataset I designed to mirror real collections
+                        industry behavior, because the real client data stays private.</p>
                 </div>
 
                 <div>
                     <h4 class="text-brand-header font-bold text-xl mb-2">Action</h4>
                     <ul class="list-disc pl-5 space-y-2 text-brand-text">
                         <li><strong class="text-brand-header">Data Engineering:</strong> Used the Faker library in
-                            Python to generate a sophisticated dataset that mirrored industry trends.</li>
-                        <li><strong class="text-brand-header">Business Logic:</strong> Programmed specific constraints
-                            for holiday based behavior and time of day trends to avoid statistical flatness.</li>
+                            Python to generate a dataset with realistic distributions, including time-of-day call
+                            patterns and holiday-driven behavior, to avoid the statistical flatness of purely random
+                            data.</li>
+                        <li><strong class="text-brand-header">Business Logic:</strong> Programmed agent-level
+                            performance constraints that reflect how real collections KPIs behave across RPC rates,
+                            payment conversions, and silence time, so the data could support meaningful drill-down
+                            analysis.</li>
                         <li><strong class="text-brand-header">Visualization:</strong> Designed a Tableau dashboard with
-                            drill down capabilities to track RPC rates, payment conversions, and silence time.</li>
+                            full drill-down capability, built to the same standard as a production reporting
+                            environment.</li>
                     </ul>
                 </div>
 
                 <div class="bg-black/5 p-6 rounded-2xl border border-brand-border shadow-sm">
                     <h4 class="text-brand-header font-bold text-xl mb-2">Result</h4>
-                    <p>A working reporting architecture that mirrors what a production collections environment looks
-                        like, built to show end-to-end thinking from data generation through to executive-facing
-                        visualization.</p>
+                    <p>A working reporting architecture grounded in a real operational use case, rebuilt for a public
+                        portfolio using synthetic data. Demonstrates end-to-end thinking from data generation through to
+                        the kind of executive-facing visualization that drives actual decisions.</p>
                 </div>
             </div>
         </div>
@@ -997,28 +1004,37 @@
             <div class="space-y-6 text-lg text-brand-text leading-relaxed">
                 <div>
                     <h4 class="text-brand-header font-bold text-xl mb-2">Context</h4>
-                    <p>Generating accurate text descriptions for images requires a deep understanding of visual
-                        patterns. I developed this AI system to automate image captioning with a focus on model
-                        performance and security.</p>
+                    <p>This project started during my undergrad as a basic CNN-based image captioning experiment with a
+                        local UI and limited model quality. I rebuilt it from scratch at Algonquin once I had access to
+                        better tools and infrastructure. The goal was the same, generating accurate natural language
+                        descriptions from images, but this time done properly: a fine-tuned BLIP model, a real dataset,
+                        formal evaluation, and a deployable application.</p>
                 </div>
 
                 <div>
                     <h4 class="text-brand-header font-bold text-xl mb-2">Action</h4>
                     <ul class="list-disc pl-5 space-y-2 text-brand-text">
-                        <li><strong class="text-brand-header">Model Fine Tuning:</strong> Optimized a BLIP architecture
-                            using a dataset of 20,000 images to improve description relevance.</li>
-                        <li><strong class="text-brand-header">Performance Evaluation:</strong> Implemented a testing
-                            framework using BLEU scores to objectively measure the quality of generated text.</li>
-                        <li><strong class="text-brand-header">Secure Deployment:</strong> Built an interactive Streamlit
-                            application featuring a session based authentication system for secure user access.</li>
+                        <li><strong class="text-brand-header">Model Fine-Tuning:</strong> Fine-tuned Salesforce's BLIP
+                            model on 20,000 images from the Flickr30k dataset using mixed-precision training and
+                            gradient accumulation to work within GPU constraints, with the remaining 11,784 images held
+                            as an unseen test set.</li>
+                        <li><strong class="text-brand-header">Performance Evaluation:</strong> Tracked model quality
+                            using BLEU score across three stages: zero-shot baseline, a 5,000-image subset, and the
+                            final 20,000-image run. Each iteration measurably improved the model's ability to describe
+                            entities, actions, and scene context.</li>
+                        <li><strong class="text-brand-header">Deployment:</strong> Built a Streamlit application with
+                            session-based authentication, replacing the original local Tkinter prototype with a clean,
+                            shareable interface structured for future cloud hosting once model size constraints are
+                            resolved.</li>
                     </ul>
                 </div>
 
                 <div class="bg-black/5 p-6 rounded-2xl border border-brand-border shadow-sm">
                     <h4 class="text-brand-header font-bold text-xl mb-2">Result</h4>
-                    <p>Achieved a competitive 0.33 BLEU score, demonstrating the model ability to handle complex outdoor
-                        scenes and human behavior. The final product provides a scalable foundation for automated alt
-                        text and visual data indexing.</p>
+                    <p>Improved caption quality from a zero-shot BLEU of 0.028 to 0.33 through progressive fine-tuning,
+                        more than a 10x gain. The model handles real-world scenes involving people, animals, and outdoor
+                        settings with solid linguistic accuracy. A functional early-stage MVP structured to scale with
+                        more data and compute.</p>
                 </div>
             </div>
 
@@ -1235,8 +1251,7 @@
                 <div class="bg-black/5 p-6 rounded-2xl border border-brand-border shadow-sm">
                     <h4 class="text-brand-header font-bold text-xl mb-2">Result</h4>
                     <p>A fully automated pipeline that takes a raw dataset and produces a boardroom ready HTML report in
-                        under 60 seconds. Built to demonstrate how a BI analyst uses LLMs to accelerate reporting
-                        without sacrificing accuracy.</p>
+                        under 60 seconds. The kind of output that used to take an analyst a day to produce manually.</p>
                 </div>
             </div>
         </div>
